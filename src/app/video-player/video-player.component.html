@@ -1,0 +1,21 @@
+<div class="video-container">
+  <video
+    #videoPlayer
+    muted
+    playsinline
+    (ended)="onVideoEnded()"
+  ></video>
+
+  <!-- AD OVERLAY -->
+  <div class="ad-overlay" *ngIf="isAdPlaying">
+    <span class="ad-label">Ad</span>
+
+    <button *ngIf="canSkipAd" class="skip-btn" (click)="skipAd()">
+      Skip Ad
+    </button>
+
+    <span *ngIf="!canSkipAd">
+      Skip in {{ skipTimer }}s
+    </span>
+  </div>
+</div>
